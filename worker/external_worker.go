@@ -3,7 +3,7 @@ package worker
 import (
 	"strconv"
 
-	"github.com/gdharley/flowable-external-client-golang/flowable"
+	"github.com/flowable/flowable-external-client-golang/flowable"
 )
 
 // ExternalWorker is the worker handler function used by the Flowable subscriber.
