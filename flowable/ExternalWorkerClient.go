@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"strings"
 	"time"
 )
 
@@ -60,7 +61,8 @@ func SetEnableLogging(enabled bool) {
 
 // Acquire_jobs performs a POST to the acquire jobs endpoint (/acquire/jobs) with a JSON body.
 func Acquire_jobs(reqBody AcquireRequest) (jobs []interface{}, body string, status int, err error) {
-	full := reqBody.URL + job_api + "/acquire/jobs"
+	baseURL := strings.TrimRight(reqBody.URL, "/")
+	full := baseURL + job_api + "/acquire/jobs"
 	payload, err := json.Marshal(reqBody)
 	if err != nil {
 		return nil, "", -1, err
@@ -80,7 +82,7 @@ func Acquire_jobs(reqBody AcquireRequest) (jobs []interface{}, body string, stat
 
 // List_jobs performs a single GET to the jobs endpoint and returns the status and raw response body.
 func List_jobs(url string) (status int, body string, err error) {
-	full := url + job_api + "/jobs"
+	full := strings.TrimRight(url, "/") + job_api + "/jobs"
 	status, bodyBytes, err := restGet(full)
 	if err != nil {
 		return -1, "", err
@@ -137,6 +139,7 @@ func Subscribe(acquireReq AcquireRequest, handler ResponseHandler) {
 // handle_worker_response centralizes logging/processing of handler responses.
 // It also calls the appropriate task action (complete/fail/bpmnError/cmmnTerminate) via REST.
 func handle_worker_response(baseURL string, workerId string, jobId string, resStatus HandlerStatus, resObj *HandlerResult) {
+	baseURL = strings.TrimRight(baseURL, "/")
 	// Ensure resObj has workerId populated
 	if resObj != nil && resObj.WorkerId == "" {
 		resObj.WorkerId = workerId

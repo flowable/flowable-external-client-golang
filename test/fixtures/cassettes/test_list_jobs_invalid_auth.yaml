@@ -1,0 +1,50 @@
+---
+version: 1
+interactions:
+    - request:
+        body: ""
+        form: {}
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic aW52YWxpZDphdXRo
+            Content-Type:
+                - application/json
+        url: http://localhost:8090/external-job-api/jobs
+        method: GET
+      response:
+        body: |-
+            {
+              "timestamp" : "2026-02-12T19:54:53.330Z",
+              "status" : 401,
+              "error" : "Unauthorized",
+              "path" : "/external-job-api/jobs"
+            }
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 19:54:53 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=b81dbcf7-f597-4987-9294-c99a910afc81; Path=/
+                - flowable-remember-me=; Expires=Thu, 01 Jan 1970 00:00:10 GMT; Path=/
+            Vary:
+                - accept-encoding
+            Www-Authenticate:
+                - Basic realm="Realm"
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '401 '
+        code: 401
+        duration: 92.126833ms

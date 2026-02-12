@@ -1,0 +1,289 @@
+---
+version: 1
+interactions:
+    - request:
+        body: "--9dd58faf790ccf79a814c6b9ff9bdc82de891af8e57f0f72415927dc95a9\r\nContent-Disposition: form-data; name=\"file\"; filename=\"externalWorkerCase.cmmn\"\r\nContent-Type: application/octet-stream\r\n\r\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<definitions xmlns=\"http://www.omg.org/spec/CMMN/20151109/MODEL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:flowable=\"http://flowable.org/cmmn\" xmlns:cmmndi=\"http://www.omg.org/spec/CMMN/20151109/CMMNDI\" xmlns:dc=\"http://www.omg.org/spec/CMMN/20151109/DC\" xmlns:di=\"http://www.omg.org/spec/CMMN/20151109/DI\" xmlns:design=\"http://flowable.org/design\" targetNamespace=\"http://flowable.org/cmmn\" design:palette=\"flowable-work-case-palette\">\n  <case id=\"externalWorkerCase\" name=\"External Worker Case\" flowable:initiatorVariableName=\"initiator\" flowable:candidateStarterGroups=\"flowableUser\">\n    <casePlanModel id=\"onecaseplanmodel1\" name=\"Case plan model\" flowable:formFieldValidation=\"false\">\n      <extensionElements>\n        <flowable:default-menu-navigation-size><![CDATA[expanded]]></flowable:default-menu-navigation-size>\n        <flowable:work-form-field-validation><![CDATA[false]]></flowable:work-form-field-validation>\n        <design:stencilid><![CDATA[CasePlanModel]]></design:stencilid>\n      </extensionElements>\n      <planItem id=\"planItemcmmnTask_1\" name=\"External Worker task\" definitionRef=\"cmmnTask_1\"></planItem>\n      <task id=\"cmmnTask_1\" name=\"External Worker task\" flowable:type=\"external-worker\" flowable:exclusive=\"false\" flowable:topic=\"cmmnTopic\">\n        <extensionElements>\n          <design:stencilid><![CDATA[ExternalWorkerTask]]></design:stencilid>\n          <design:stencilsuperid><![CDATA[Task]]></design:stencilsuperid>\n        </extensionElements>\n      </task>\n    </casePlanModel>\n  </case>\n  <cmmndi:CMMNDI>\n    <cmmndi:CMMNDiagram id=\"CMMNDiagram_externalWorkerCase\">\n      <cmmndi:CMMNShape id=\"CMMNShape_onecaseplanmodel1\" cmmnElementRef=\"onecaseplanmodel1\">\n        <dc:Bounds height=\"679.0\" width=\"830.0\" x=\"270.0\" y=\"120.0\"></dc:Bounds>\n        <cmmndi:CMMNLabel></cmmndi:CMMNLabel>\n      </cmmndi:CMMNShape>\n      <cmmndi:CMMNShape id=\"CMMNShape_planItemcmmnTask_1\" cmmnElementRef=\"planItemcmmnTask_1\">\n        <dc:Bounds height=\"80.0\" width=\"100.0\" x=\"453.0\" y=\"271.01705169677734\"></dc:Bounds>\n        <cmmndi:CMMNLabel></cmmndi:CMMNLabel>\n      </cmmndi:CMMNShape>\n    </cmmndi:CMMNDiagram>\n  </cmmndi:CMMNDI>\n</definitions>\r\n--9dd58faf790ccf79a814c6b9ff9bdc82de891af8e57f0f72415927dc95a9--\r\n"
+        form: {}
+        headers:
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+            Content-Type:
+                - multipart/form-data; boundary=9dd58faf790ccf79a814c6b9ff9bdc82de891af8e57f0f72415927dc95a9
+        url: http://localhost:8090/cmmn-api/cmmn-repository/deployments
+        method: POST
+      response:
+        body: '{"url":"http://localhost:8090/cmmn-api/cmmn-repository/deployments/CAS-b6520033-084c-11f1-b104-babe3fa8c160","id":"CAS-b6520033-084c-11f1-b104-babe3fa8c160","name":"externalWorkerCase","deploymentTime":"2026-02-12T19:54:59.456Z","category":null,"parentDeploymentId":"CAS-b6520033-084c-11f1-b104-babe3fa8c160","tenantId":""}'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 19:54:59 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=ac1057d0-7635-4675-b635-56a3b0de1db6; Path=/
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '201 '
+        code: 201
+        duration: 85.991042ms
+    - request:
+        body: ""
+        form: {}
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+        url: http://localhost:8090/cmmn-api/cmmn-repository/case-definitions?deploymentId=CAS-b6520033-084c-11f1-b104-babe3fa8c160
+        method: GET
+      response:
+        body: '{"data":[{"id":"CAS-b6527565-084c-11f1-b104-babe3fa8c160","url":"http://localhost:8090/cmmn-api/cmmn-repository/case-definitions/CAS-b6527565-084c-11f1-b104-babe3fa8c160","key":"externalWorkerCase","version":2,"name":"External Worker Case","description":null,"tenantId":"","deploymentId":"CAS-b6520033-084c-11f1-b104-babe3fa8c160","deploymentUrl":"http://localhost:8090/cmmn-api/cmmn-repository/deployments/CAS-b6520033-084c-11f1-b104-babe3fa8c160","resource":"http://localhost:8090/cmmn-api/cmmn-repository/deployments/CAS-b6520033-084c-11f1-b104-babe3fa8c160/resources/externalWorkerCase.cmmn","diagramResource":null,"category":"http://flowable.org/cmmn","graphicalNotationDefined":true,"startFormDefined":false}],"total":1,"start":0,"sort":"name","order":"asc","size":1}'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 19:54:59 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=d87ea018-db91-45d8-b27d-cb45632efa2e; Path=/
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '200 '
+        code: 200
+        duration: 81.514041ms
+    - request:
+        body: '{"caseDefinitionId":"CAS-b6527565-084c-11f1-b104-babe3fa8c160"}'
+        form: {}
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+            Content-Type:
+                - application/json
+        url: http://localhost:8090/cmmn-api/cmmn-runtime/case-instances
+        method: POST
+      response:
+        body: '{"id":"CAS-b68656a7-084c-11f1-b104-babe3fa8c160","name":null,"url":"http://localhost:8090/cmmn-api/cmmn-runtime/case-instances/CAS-b68656a7-084c-11f1-b104-babe3fa8c160","businessKey":null,"businessStatus":null,"startTime":"2026-02-12T19:54:59.799Z","startUserId":"admin","state":"active","ended":false,"caseDefinitionId":"CAS-b6527565-084c-11f1-b104-babe3fa8c160","caseDefinitionUrl":"http://localhost:8090/cmmn-api/cmmn-repository/case-definitions/CAS-b6527565-084c-11f1-b104-babe3fa8c160","caseDefinitionName":"External Worker Case","caseDefinitionDescription":null,"parentId":null,"callbackId":null,"callbackType":null,"referenceId":null,"referenceType":null,"variables":[{"name":"initiator","type":"string","value":"admin","scope":"local"}],"tenantId":"","completed":false}'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 19:54:59 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=805e8949-e27c-4497-8bb7-eb432bf64f36; Path=/
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '201 '
+        code: 201
+        duration: 98.9495ms
+    - request:
+        body: '{"topic":"cmmnTopic","lockDuration":"PT10S","numberOfTasks":1,"numberOfRetries":3,"workerId":"test-worker","scopeType":"cmmn"}'
+        form: {}
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+            Content-Type:
+                - application/json
+        url: http://localhost:8090/external-job-api/acquire/jobs
+        method: POST
+      response:
+        body: '[{"id":"JOB-b68719fe-084c-11f1-b104-babe3fa8c160","url":"http://localhost:8090/external-job-api/jobs/JOB-b68719fe-084c-11f1-b104-babe3fa8c160","correlationId":"b68719fd-084c-11f1-b104-babe3fa8c160","processInstanceId":null,"processDefinitionId":null,"executionId":null,"scopeId":"CAS-b68656a7-084c-11f1-b104-babe3fa8c160","subScopeId":"CAS-b686f2ec-084c-11f1-b104-babe3fa8c160","scopeDefinitionId":"CAS-b6527565-084c-11f1-b104-babe3fa8c160","scopeType":"cmmn","elementId":"cmmnTask_1","elementName":"External Worker task","retries":3,"exceptionMessage":null,"dueDate":null,"createTime":"2026-02-12T19:54:59.804Z","tenantId":"","lockOwner":"test-worker","lockExpirationTime":"2026-02-12T19:55:09.997Z","variables":[{"name":"initiator","type":"string","value":"admin"}]}]'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 19:55:00 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=21105809-3ffd-4a8f-8ff0-bf75aba31c32; Path=/
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '200 '
+        code: 200
+        duration: 92.683958ms
+    - request:
+        body: '{"status":"","workerId":"test-worker","variables":[{"name":"testVar","type":"string","value":"test terminate"}]}'
+        form: {}
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+            Content-Type:
+                - application/json
+        url: http://localhost:8090/external-job-api/acquire/jobs/JOB-b68719fe-084c-11f1-b104-babe3fa8c160/cmmnTerminate
+        method: POST
+      response:
+        body: ""
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Date:
+                - Thu, 12 Feb 2026 19:55:00 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=5db34bd0-eb6c-45bf-ba2e-c8860ee17e34; Path=/
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '204 '
+        code: 204
+        duration: 87.3045ms
+    - request:
+        body: ""
+        form: {}
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+        url: http://localhost:8090/cmmn-api/cmmn-history/historic-variable-instances?caseInstanceId=CAS-b68656a7-084c-11f1-b104-babe3fa8c160&variableName=testVar
+        method: GET
+      response:
+        body: '{"data":[{"id":"VAR-b6c20022-084c-11f1-b104-babe3fa8c160","caseInstanceId":"CAS-b68656a7-084c-11f1-b104-babe3fa8c160","caseInstanceUrl":"http://localhost:8090/cmmn-api/cmmn-history/historic-case-instances/CAS-b68656a7-084c-11f1-b104-babe3fa8c160","taskId":null,"planItemInstanceId":null,"variable":{"name":"testVar","type":"string","value":"test terminate","scope":"global"}}],"total":1,"start":0,"sort":"variableName","order":"asc","size":1}'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 19:55:00 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=b63f1520-4784-429a-9c5f-a3db8318adbc; Path=/
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '200 '
+        code: 200
+        duration: 79.159875ms
+    - request:
+        body: ""
+        form: {}
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+        url: http://localhost:8090/cmmn-api/cmmn-runtime/case-instances/CAS-b68656a7-084c-11f1-b104-babe3fa8c160
+        method: DELETE
+      response:
+        body: '{"message":"Not found","exception":"Could not find a case instance with id ''CAS-b68656a7-084c-11f1-b104-babe3fa8c160''."}'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 19:55:00 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=7cb8b02b-2465-4557-93ad-5744232bcc34; Path=/
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '404 '
+        code: 404
+        duration: 78.551625ms
+    - request:
+        body: ""
+        form: {}
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+        url: http://localhost:8090/cmmn-api/cmmn-repository/deployments/CAS-b6520033-084c-11f1-b104-babe3fa8c160
+        method: DELETE
+      response:
+        body: ""
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Date:
+                - Thu, 12 Feb 2026 19:55:00 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=d4ce31d9-4f36-424c-86da-96409212df7a; Path=/
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '204 '
+        code: 204
+        duration: 87.939166ms

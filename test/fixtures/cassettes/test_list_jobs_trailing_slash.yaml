@@ -1,0 +1,41 @@
+---
+version: 1
+interactions:
+    - request:
+        body: ""
+        form: {}
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+            Content-Type:
+                - application/json
+        url: http://localhost:8090/external-job-api/jobs
+        method: GET
+      response:
+        body: '{"data":[],"total":0,"start":0,"sort":"id","order":"asc","size":0}'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 19:55:00 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=94ea530f-c2aa-40a5-bda4-fafdf53c37d1; Path=/
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '200 '
+        code: 200
+        duration: 85.365917ms

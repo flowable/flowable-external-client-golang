@@ -13,6 +13,7 @@ var (
 	AuthUser       = ""
 	AuthPass       = ""
 	BearerToken    = ""
+	HTTPClient     = &http.Client{}
 	DefaultHeaders = map[string]string{
 		"Accept":       "application/json",
 		"Content-Type": "application/json",
@@ -35,6 +36,16 @@ func SetDefaultHeader(key, value string) {
 	DefaultHeaders[key] = value
 }
 
+// SetHTTPClient allows callers to override the HTTP client used for REST requests.
+// Passing nil resets the default client.
+func SetHTTPClient(client *http.Client) {
+	if client == nil {
+		HTTPClient = &http.Client{}
+		return
+	}
+	HTTPClient = client
+}
+
 // prepareRequest applies default headers and authentication to an http.Request
 func prepareRequest(req *http.Request) {
 	for k, v := range DefaultHeaders {
@@ -51,7 +62,6 @@ func prepareRequest(req *http.Request) {
 
 // restGet performs a GET request to the provided full URL and returns status, body bytes, and error.
 func restGet(fullURL string) (status int, body []byte, err error) {
-	client := &http.Client{}
 	req, err := http.NewRequest("GET", fullURL, nil)
 	if err != nil {
 		return -1, nil, err
@@ -59,7 +69,7 @@ func restGet(fullURL string) (status int, body []byte, err error) {
 
 	prepareRequest(req)
 
-	resp, err := client.Do(req)
+	resp, err := HTTPClient.Do(req)
 	if err != nil {
 		return -1, nil, err
 	}
@@ -73,7 +83,6 @@ func restGet(fullURL string) (status int, body []byte, err error) {
 
 // restPost performs a POST request to the provided full URL with the given JSON payload.
 func restPost(fullURL string, payload []byte) (status int, body []byte, err error) {
-	client := &http.Client{}
 	req, err := http.NewRequest("POST", fullURL, bytes.NewReader(payload))
 	if err != nil {
 		return -1, nil, err
@@ -81,7 +90,7 @@ func restPost(fullURL string, payload []byte) (status int, body []byte, err erro
 
 	prepareRequest(req)
 
-	resp, err := client.Do(req)
+	resp, err := HTTPClient.Do(req)
 	if err != nil {
 		return -1, nil, err
 	}
