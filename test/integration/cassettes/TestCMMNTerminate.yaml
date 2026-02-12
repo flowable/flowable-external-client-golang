@@ -1,0 +1,341 @@
+---
+version: 2
+interactions:
+    - id: 0
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 2484
+        host: localhost:8090
+        body: "--ede0f4ae2d3b953cf2f042afcdfd7794206c1886d62365f64d6c0680fdbd\r\nContent-Disposition: form-data; name=\"file\"; filename=\"externalWorkerCase.cmmn\"\r\nContent-Type: application/octet-stream\r\n\r\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<definitions xmlns=\"http://www.omg.org/spec/CMMN/20151109/MODEL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:flowable=\"http://flowable.org/cmmn\" xmlns:cmmndi=\"http://www.omg.org/spec/CMMN/20151109/CMMNDI\" xmlns:dc=\"http://www.omg.org/spec/CMMN/20151109/DC\" xmlns:di=\"http://www.omg.org/spec/CMMN/20151109/DI\" xmlns:design=\"http://flowable.org/design\" targetNamespace=\"http://flowable.org/cmmn\" design:palette=\"flowable-work-case-palette\">\n  <case id=\"externalWorkerCase\" name=\"External Worker Case\" flowable:initiatorVariableName=\"initiator\" flowable:candidateStarterGroups=\"flowableUser\">\n    <casePlanModel id=\"onecaseplanmodel1\" name=\"Case plan model\" flowable:formFieldValidation=\"false\">\n      <extensionElements>\n        <flowable:default-menu-navigation-size><![CDATA[expanded]]></flowable:default-menu-navigation-size>\n        <flowable:work-form-field-validation><![CDATA[false]]></flowable:work-form-field-validation>\n        <design:stencilid><![CDATA[CasePlanModel]]></design:stencilid>\n      </extensionElements>\n      <planItem id=\"planItemcmmnTask_1\" name=\"External Worker task\" definitionRef=\"cmmnTask_1\"></planItem>\n      <task id=\"cmmnTask_1\" name=\"External Worker task\" flowable:type=\"external-worker\" flowable:exclusive=\"false\" flowable:topic=\"cmmnTopic\">\n        <extensionElements>\n          <design:stencilid><![CDATA[ExternalWorkerTask]]></design:stencilid>\n          <design:stencilsuperid><![CDATA[Task]]></design:stencilsuperid>\n        </extensionElements>\n      </task>\n    </casePlanModel>\n  </case>\n  <cmmndi:CMMNDI>\n    <cmmndi:CMMNDiagram id=\"CMMNDiagram_externalWorkerCase\">\n      <cmmndi:CMMNShape id=\"CMMNShape_onecaseplanmodel1\" cmmnElementRef=\"onecaseplanmodel1\">\n        <dc:Bounds height=\"679.0\" width=\"830.0\" x=\"270.0\" y=\"120.0\"></dc:Bounds>\n        <cmmndi:CMMNLabel></cmmndi:CMMNLabel>\n      </cmmndi:CMMNShape>\n      <cmmndi:CMMNShape id=\"CMMNShape_planItemcmmnTask_1\" cmmnElementRef=\"planItemcmmnTask_1\">\n        <dc:Bounds height=\"80.0\" width=\"100.0\" x=\"453.0\" y=\"271.01705169677734\"></dc:Bounds>\n        <cmmndi:CMMNLabel></cmmndi:CMMNLabel>\n      </cmmndi:CMMNShape>\n    </cmmndi:CMMNDiagram>\n  </cmmndi:CMMNDI>\n</definitions>\r\n--ede0f4ae2d3b953cf2f042afcdfd7794206c1886d62365f64d6c0680fdbd--\r\n"
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+            Content-Type:
+                - multipart/form-data; boundary=ede0f4ae2d3b953cf2f042afcdfd7794206c1886d62365f64d6c0680fdbd
+        url: http://localhost:8090/flowable-work/cmmn-api/cmmn-repository/deployments
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding:
+            - chunked
+        content_length: -1
+        uncompressed: true
+        body: '{"url":"http://localhost:8090/flowable-work/cmmn-api/cmmn-repository/deployments/CAS-ca83d8c5-0820-11f1-8087-2edfee439de1","category":null,"deploymentTime":"2026-02-12T14:40:35.481Z","id":"CAS-ca83d8c5-0820-11f1-8087-2edfee439de1","name":"externalWorkerCase","parentDeploymentId":"CAS-ca83d8c5-0820-11f1-8087-2edfee439de1","tenantId":""}'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 14:40:35 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=31836801-4bd3-4b0c-bd7c-5eb5f158bacb; Path=/flowable-work
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '201 '
+        code: 201
+        duration: 103.196458ms
+    - id: 1
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        host: localhost:8090
+        form:
+            deploymentId:
+                - CAS-ca83d8c5-0820-11f1-8087-2edfee439de1
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+        url: http://localhost:8090/flowable-work/cmmn-api/cmmn-repository/case-definitions?deploymentId=CAS-ca83d8c5-0820-11f1-8087-2edfee439de1
+        method: GET
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding:
+            - chunked
+        content_length: -1
+        uncompressed: true
+        body: '{"data":[{"category":"http://flowable.org/cmmn","deploymentId":"CAS-ca83d8c5-0820-11f1-8087-2edfee439de1","deploymentUrl":"http://localhost:8090/flowable-work/cmmn-api/cmmn-repository/deployments/CAS-ca83d8c5-0820-11f1-8087-2edfee439de1","description":null,"diagramResource":null,"graphicalNotationDefined":true,"id":"CAS-ca84ea37-0820-11f1-8087-2edfee439de1","key":"externalWorkerCase","name":"External Worker Case","resource":"http://localhost:8090/flowable-work/cmmn-api/cmmn-repository/deployments/CAS-ca83d8c5-0820-11f1-8087-2edfee439de1/resources/externalWorkerCase.cmmn","startFormDefined":false,"tenantId":"","url":"http://localhost:8090/flowable-work/cmmn-api/cmmn-repository/case-definitions/CAS-ca84ea37-0820-11f1-8087-2edfee439de1","version":3}],"order":"asc","size":1,"sort":"name","start":0,"total":1}'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 14:40:35 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=d6e4b8cf-a294-409d-be04-1c250ec2e375; Path=/flowable-work
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '200 '
+        code: 200
+        duration: 87.439792ms
+    - id: 2
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 63
+        host: localhost:8090
+        body: '{"caseDefinitionId":"CAS-ca84ea37-0820-11f1-8087-2edfee439de1"}'
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+            Content-Type:
+                - application/json
+        url: http://localhost:8090/flowable-work/cmmn-api/cmmn-runtime/case-instances
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding:
+            - chunked
+        content_length: -1
+        uncompressed: true
+        body: '{"businessKey":null,"businessStatus":null,"callbackId":null,"callbackType":null,"caseDefinitionDescription":null,"caseDefinitionId":"CAS-ca84ea37-0820-11f1-8087-2edfee439de1","caseDefinitionName":"External Worker Case","caseDefinitionUrl":"http://localhost:8090/flowable-work/cmmn-api/cmmn-repository/case-definitions/CAS-ca84ea37-0820-11f1-8087-2edfee439de1","completed":false,"ended":false,"id":"CAS-cabe49b9-0820-11f1-8087-2edfee439de1","name":null,"parentId":null,"referenceId":null,"referenceType":null,"startTime":"2026-02-12T14:40:35.864Z","startUserId":"admin","state":"active","tenantId":"","url":"http://localhost:8090/flowable-work/cmmn-api/cmmn-runtime/case-instances/CAS-cabe49b9-0820-11f1-8087-2edfee439de1","variables":[{"name":"initiator","scope":"local","type":"string","value":"admin"}]}'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 14:40:35 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=09930646-ac92-4431-b9f3-fd8234435c36; Path=/flowable-work
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '201 '
+        code: 201
+        duration: 111.592167ms
+    - id: 3
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 126
+        host: localhost:8090
+        body: '{"topic":"cmmnTopic","lockDuration":"PT1M","numberOfTasks":10,"numberOfRetries":5,"workerId":"test-worker","scopeType":"cmmn"}'
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+            Content-Type:
+                - application/json
+        url: http://localhost:8090/flowable-work/external-job-api/acquire/jobs
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding:
+            - chunked
+        content_length: -1
+        uncompressed: true
+        body: '[{"correlationId":"cabf823f-0820-11f1-8087-2edfee439de1","createTime":"2026-02-12T14:40:35.872Z","dueDate":null,"elementId":"cmmnTask_1","elementName":"External Worker task","exceptionMessage":null,"executionId":null,"id":"JOB-cabf8240-0820-11f1-8087-2edfee439de1","lockExpirationTime":"2026-02-12T14:41:36.088Z","lockOwner":"test-worker","processDefinitionId":null,"processInstanceId":null,"retries":3,"scopeDefinitionId":"CAS-ca84ea37-0820-11f1-8087-2edfee439de1","scopeId":"CAS-cabe49b9-0820-11f1-8087-2edfee439de1","scopeType":"cmmn","subScopeId":"CAS-cabf5b2e-0820-11f1-8087-2edfee439de1","tenantId":"","url":"http://localhost:8090/flowable-work/external-job-api/jobs/JOB-cabf8240-0820-11f1-8087-2edfee439de1","variables":[{"name":"initiator","type":"string","value":"admin"}]}]'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 14:40:36 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=bcaff46f-74c6-4c91-baba-fd03d84bd78b; Path=/flowable-work
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '200 '
+        code: 200
+        duration: 93.384916ms
+    - id: 4
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 100
+        host: localhost:8090
+        body: '{"variables":[{"name":"testVar","type":"string","value":"test terminate"}],"workerId":"test-worker"}'
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+            Content-Type:
+                - application/json
+        url: http://localhost:8090/flowable-work/external-job-api/acquire/jobs/JOB-cabf8240-0820-11f1-8087-2edfee439de1/cmmnTerminate
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        body: ""
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Date:
+                - Thu, 12 Feb 2026 14:40:36 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=f1698cdb-3dd6-4e42-87af-d11a5be077d6; Path=/flowable-work
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '204 '
+        code: 204
+        duration: 100.521834ms
+    - id: 5
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        host: localhost:8090
+        form:
+            caseInstanceId:
+                - CAS-cabe49b9-0820-11f1-8087-2edfee439de1
+            variableName:
+                - testVar
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+        url: http://localhost:8090/flowable-work/cmmn-api/cmmn-history/historic-variable-instances?caseInstanceId=CAS-cabe49b9-0820-11f1-8087-2edfee439de1&variableName=testVar
+        method: GET
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding:
+            - chunked
+        content_length: -1
+        uncompressed: true
+        body: '{"data":[{"caseInstanceId":"CAS-cabe49b9-0820-11f1-8087-2edfee439de1","caseInstanceUrl":"http://localhost:8090/flowable-work/cmmn-api/cmmn-history/historic-case-instances/CAS-cabe49b9-0820-11f1-8087-2edfee439de1","id":"VAR-cb0034c4-0820-11f1-8087-2edfee439de1","planItemInstanceId":null,"taskId":null,"variable":{"name":"testVar","scope":"global","type":"string","value":"test terminate"}}],"order":"asc","size":1,"sort":"variableName","start":0,"total":1}'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 14:40:36 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=465e6151-4369-4bd9-8a6c-c37b8cacc1d1; Path=/flowable-work
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '200 '
+        code: 200
+        duration: 86.63275ms
+    - id: 6
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        host: localhost:8090
+        form:
+            cascade:
+                - "true"
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+        url: http://localhost:8090/flowable-work/cmmn-api/cmmn-repository/deployments/CAS-ca83d8c5-0820-11f1-8087-2edfee439de1?cascade=true
+        method: DELETE
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        body: ""
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Date:
+                - Thu, 12 Feb 2026 14:40:36 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=4558457f-def7-4d00-9135-f5443c79ea44; Path=/flowable-work
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '204 '
+        code: 204
+        duration: 112.4525ms
