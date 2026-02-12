@@ -66,3 +66,33 @@ flowable.SetEnableLogging(false) // disable
 
 When logging is disabled the library will suppress internal `log.Printf` messages.
 
+## Integration Tests With Cached HTTP Cassettes
+
+Integration tests in `test/flowable_integration_test.go` use a VCR-style recorder (`go-vcr`) and store HTTP cassettes in `test/fixtures/cassettes`.
+
+### First run (record cassettes)
+
+Requires a running Flowable Work instance.
+
+```bash
+FLOWABLE_INTEGRATION=1 \
+FLOWABLE_CASSETTE_MODE=record \
+FLOWABLE_BASE_URL=http://localhost:8090 \
+FLOWABLE_USERNAME=admin \
+FLOWABLE_PASSWORD=test \
+go test ./test -run Integration -v
+```
+
+### Run from cache (no Flowable required)
+
+```bash
+FLOWABLE_CASSETTE_MODE=replay go test ./test -run Integration -v
+```
+
+### Cassette behavior
+
+- Default behavior:
+  - With `FLOWABLE_INTEGRATION=1`: replay existing cassette interactions and record missing ones.
+  - Without `FLOWABLE_INTEGRATION=1`: replay only from existing cassettes.
+- If a cassette is missing and `FLOWABLE_INTEGRATION` is not set, that test is skipped.
+- To re-seed all cassettes, delete `test/fixtures/cassettes/*.yaml` and run in `record` mode again.
