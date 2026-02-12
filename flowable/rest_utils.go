@@ -8,7 +8,7 @@ import (
 
 // rest_utils.go centralizes HTTP helpers, default headers, and auth settings used by the package.
 
-// Package-level auth and header configuration
+// Package-level auth, header, and HTTP client configuration
 var (
 	AuthUser       = ""
 	AuthPass       = ""
@@ -17,7 +17,14 @@ var (
 		"Accept":       "application/json",
 		"Content-Type": "application/json",
 	}
+	HTTPClient *http.Client = &http.Client{}
 )
+
+// SetHTTPClient allows callers to override the HTTP client used for REST requests.
+// This is useful for injecting a VCR recorder transport for testing.
+func SetHTTPClient(c *http.Client) {
+	HTTPClient = c
+}
 
 // SetAuth allows callers to override the basic auth credentials used for REST requests.
 func SetAuth(user, pass string) {
@@ -51,7 +58,6 @@ func prepareRequest(req *http.Request) {
 
 // restGet performs a GET request to the provided full URL and returns status, body bytes, and error.
 func restGet(fullURL string) (status int, body []byte, err error) {
-	client := &http.Client{}
 	req, err := http.NewRequest("GET", fullURL, nil)
 	if err != nil {
 		return -1, nil, err
@@ -59,7 +65,7 @@ func restGet(fullURL string) (status int, body []byte, err error) {
 
 	prepareRequest(req)
 
-	resp, err := client.Do(req)
+	resp, err := HTTPClient.Do(req)
 	if err != nil {
 		return -1, nil, err
 	}
@@ -73,7 +79,6 @@ func restGet(fullURL string) (status int, body []byte, err error) {
 
 // restPost performs a POST request to the provided full URL with the given JSON payload.
 func restPost(fullURL string, payload []byte) (status int, body []byte, err error) {
-	client := &http.Client{}
 	req, err := http.NewRequest("POST", fullURL, bytes.NewReader(payload))
 	if err != nil {
 		return -1, nil, err
@@ -81,7 +86,7 @@ func restPost(fullURL string, payload []byte) (status int, body []byte, err erro
 
 	prepareRequest(req)
 
-	resp, err := client.Do(req)
+	resp, err := HTTPClient.Do(req)
 	if err != nil {
 		return -1, nil, err
 	}
