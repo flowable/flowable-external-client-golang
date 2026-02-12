@@ -3,7 +3,7 @@ package worker_test
 import (
 	"testing"
 
-	"github.com/gdharley/flowable-external-client-golang/flowable"
+	"github.com/flowable/flowable-external-client-golang/flowable"
 )
 
 func TestExtractVariablesFromBody_MapFormat(t *testing.T) {

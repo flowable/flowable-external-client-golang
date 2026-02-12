@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/gdharley/flowable-external-client-golang/flowable"
+	"github.com/flowable/flowable-external-client-golang/flowable"
 )
 
 func TestGetVar_String(t *testing.T) {

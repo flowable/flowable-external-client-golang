@@ -3,8 +3,8 @@ package main
 import (
 	"time"
 
-	"github.com/gdharley/flowable-external-client-golang/flowable"
-	"github.com/gdharley/flowable-external-client-golang/worker"
+	"github.com/flowable/flowable-external-client-golang/flowable"
+	"github.com/flowable/flowable-external-client-golang/worker"
 )
 
 // Sample main function to start the Flowable external worker subscription

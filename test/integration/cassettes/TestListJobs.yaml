@@ -1,0 +1,285 @@
+---
+version: 2
+interactions:
+    - id: 0
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 4320
+        host: localhost:8090
+        body: "--b6fd3e1fa1ef2390380a7793c835ef3db3a6b6eb3c194a030a8de7f35141\r\nContent-Disposition: form-data; name=\"file\"; filename=\"externalWorkerProcess.bpmn\"\r\nContent-Type: application/octet-stream\r\n\r\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<definitions xmlns=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:flowable=\"http://flowable.org/bpmn\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:omgdc=\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:omgdi=\"http://www.omg.org/spec/DD/20100524/DI\" xmlns:design=\"http://flowable.org/design\" typeLanguage=\"http://www.w3.org/2001/XMLSchema\" expressionLanguage=\"http://www.w3.org/1999/XPath\" targetNamespace=\"http://flowable.org/test\" design:palette=\"flowable-work-process-palette\">\n  <process id=\"externalWorkerProcess\" name=\"External Worker Process\" isExecutable=\"true\" flowable:candidateStarterGroups=\"flowableUser\">\n    <extensionElements>\n      <design:stencilid><![CDATA[BPMNDiagram]]></design:stencilid>\n      <design:creationdate><![CDATA[2023-08-08T10:37:00.833Z]]></design:creationdate>\n      <design:modificationdate><![CDATA[2023-08-08T10:37:26.046Z]]></design:modificationdate>\n    </extensionElements>\n    <serviceTask id=\"bpmnTask_3\" name=\"External Worker task\" flowable:type=\"external-worker\" flowable:topic=\"myTopic\">\n      <extensionElements>\n        <design:stencilid><![CDATA[ExternalWorkerTask]]></design:stencilid>\n        <design:stencilsuperid><![CDATA[Task]]></design:stencilsuperid>\n      </extensionElements>\n    </serviceTask>\n    <startEvent id=\"startnoneevent1\" flowable:initiator=\"initiator\" flowable:formFieldValidation=\"false\">\n      <extensionElements>\n        <flowable:work-form-field-validation><![CDATA[false]]></flowable:work-form-field-validation>\n        <design:stencilid><![CDATA[StartNoneEvent]]></design:stencilid>\n      </extensionElements>\n    </startEvent>\n    <endEvent id=\"bpmnEndEvent_1\">\n      <extensionElements>\n        <design:stencilid><![CDATA[EndNoneEvent]]></design:stencilid>\n      </extensionElements>\n    </endEvent>\n    <sequenceFlow id=\"bpmnSequenceFlow_4\" sourceRef=\"bpmnTask_3\" targetRef=\"bpmnEndEvent_1\">\n      <extensionElements>\n        <design:stencilid><![CDATA[SequenceFlow]]></design:stencilid>\n      </extensionElements>\n    </sequenceFlow>\n    <sequenceFlow id=\"bpmnSequenceFlow_2\" sourceRef=\"startnoneevent1\" targetRef=\"bpmnTask_3\">\n      <extensionElements>\n        <design:stencilid><![CDATA[SequenceFlow]]></design:stencilid>\n      </extensionElements>\n    </sequenceFlow>\n  </process>\n  <bpmndi:BPMNDiagram id=\"BPMNDiagram_externalWorkerProcess\">\n    <bpmndi:BPMNPlane bpmnElement=\"externalWorkerProcess\" id=\"BPMNPlane_externalWorkerProcess\">\n      <bpmndi:BPMNShape bpmnElement=\"bpmnTask_3\" id=\"BPMNShape_bpmnTask_3\">\n        <omgdc:Bounds height=\"80.0\" width=\"100.0\" x=\"451.0\" y=\"236.0\"></omgdc:Bounds>\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape bpmnElement=\"startnoneevent1\" id=\"BPMNShape_startnoneevent1\">\n        <omgdc:Bounds height=\"30.0\" width=\"30.0\" x=\"317.0\" y=\"261.0\"></omgdc:Bounds>\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape bpmnElement=\"bpmnEndEvent_1\" id=\"BPMNShape_bpmnEndEvent_1\">\n        <omgdc:Bounds height=\"28.0\" width=\"28.0\" x=\"700.0\" y=\"262.0\"></omgdc:Bounds>\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge bpmnElement=\"bpmnSequenceFlow_4\" id=\"BPMNEdge_bpmnSequenceFlow_4\" flowable:sourceDockerX=\"50.0\" flowable:sourceDockerY=\"40.0\" flowable:targetDockerX=\"14.0\" flowable:targetDockerY=\"14.0\">\n        <omgdi:waypoint x=\"551.0\" y=\"276.0\"></omgdi:waypoint>\n        <omgdi:waypoint x=\"700.0\" y=\"276.0\"></omgdi:waypoint>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNEdge bpmnElement=\"bpmnSequenceFlow_2\" id=\"BPMNEdge_bpmnSequenceFlow_2\" flowable:sourceDockerX=\"15.0\" flowable:sourceDockerY=\"15.0\" flowable:targetDockerX=\"50.0\" flowable:targetDockerY=\"40.0\">\n        <omgdi:waypoint x=\"347.0\" y=\"276.0\"></omgdi:waypoint>\n        <omgdi:waypoint x=\"399.0\" y=\"276.0\"></omgdi:waypoint>\n        <omgdi:waypoint x=\"399.0\" y=\"276.0\"></omgdi:waypoint>\n        <omgdi:waypoint x=\"451.0\" y=\"276.0\"></omgdi:waypoint>\n      </bpmndi:BPMNEdge>\n    </bpmndi:BPMNPlane>\n  </bpmndi:BPMNDiagram>\n</definitions>\r\n--b6fd3e1fa1ef2390380a7793c835ef3db3a6b6eb3c194a030a8de7f35141--\r\n"
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+            Content-Type:
+                - multipart/form-data; boundary=b6fd3e1fa1ef2390380a7793c835ef3db3a6b6eb3c194a030a8de7f35141
+        url: http://localhost:8090/flowable-work/process-api/repository/deployments
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding:
+            - chunked
+        content_length: -1
+        uncompressed: true
+        body: '{"url":"http://localhost:8090/flowable-work/process-api/repository/deployments/PRC-c4230154-0820-11f1-8087-2edfee439de1","category":null,"deploymentTime":"2026-02-12T14:40:24.780Z","id":"PRC-c4230154-0820-11f1-8087-2edfee439de1","name":"externalWorkerProcess","parentDeploymentId":"PRC-c4230154-0820-11f1-8087-2edfee439de1","tenantId":""}'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 14:40:24 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=1e6abb2d-db3e-4355-86eb-0958debc943f; Path=/flowable-work
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '201 '
+        code: 201
+        duration: 112.789584ms
+    - id: 1
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        host: localhost:8090
+        form:
+            deploymentId:
+                - PRC-c4230154-0820-11f1-8087-2edfee439de1
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+        url: http://localhost:8090/flowable-work/process-api/repository/process-definitions?deploymentId=PRC-c4230154-0820-11f1-8087-2edfee439de1
+        method: GET
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding:
+            - chunked
+        content_length: -1
+        uncompressed: true
+        body: '{"data":[{"category":"http://flowable.org/test","deploymentId":"PRC-c4230154-0820-11f1-8087-2edfee439de1","deploymentUrl":"http://localhost:8090/flowable-work/process-api/repository/deployments/PRC-c4230154-0820-11f1-8087-2edfee439de1","description":null,"diagramResource":null,"graphicalNotationDefined":true,"id":"PRC-c42439d6-0820-11f1-8087-2edfee439de1","key":"externalWorkerProcess","name":"External Worker Process","resource":"http://localhost:8090/flowable-work/process-api/repository/deployments/PRC-c4230154-0820-11f1-8087-2edfee439de1/resources/externalWorkerProcess.bpmn","startFormDefined":false,"suspended":false,"tenantId":"","url":"http://localhost:8090/flowable-work/process-api/repository/process-definitions/PRC-c42439d6-0820-11f1-8087-2edfee439de1","version":13}],"order":"asc","size":1,"sort":"name","start":0,"total":1}'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 14:40:25 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=90d2ca1d-7c8d-435b-a60c-16eb16a99735; Path=/flowable-work
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '200 '
+        code: 200
+        duration: 89.996375ms
+    - id: 2
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 66
+        host: localhost:8090
+        body: '{"processDefinitionId":"PRC-c42439d6-0820-11f1-8087-2edfee439de1"}'
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+            Content-Type:
+                - application/json
+        url: http://localhost:8090/flowable-work/process-api/runtime/process-instances
+        method: POST
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding:
+            - chunked
+        content_length: -1
+        uncompressed: true
+        body: '{"activityId":null,"businessKey":null,"businessStatus":null,"callbackId":null,"callbackType":null,"completed":false,"ended":false,"id":"PRC-c4605878-0820-11f1-8087-2edfee439de1","name":null,"processDefinitionDescription":null,"processDefinitionId":"PRC-c42439d6-0820-11f1-8087-2edfee439de1","processDefinitionName":"External Worker Process","processDefinitionUrl":"http://localhost:8090/flowable-work/process-api/repository/process-definitions/PRC-c42439d6-0820-11f1-8087-2edfee439de1","propagatedStageInstanceId":null,"referenceId":null,"referenceType":null,"startTime":"2026-02-12T14:40:25.182Z","startUserId":"admin","superProcessInstanceId":null,"suspended":false,"tenantId":"","url":"http://localhost:8090/flowable-work/process-api/runtime/process-instances/PRC-c4605878-0820-11f1-8087-2edfee439de1","variables":[{"name":"initiator","scope":"local","type":"string","value":"admin"}]}'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 14:40:25 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=6c6c62ce-8d08-4c4a-882e-20b27d060f87; Path=/flowable-work
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '201 '
+        code: 201
+        duration: 114.677584ms
+    - id: 3
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        host: localhost:8090
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+            Content-Type:
+                - application/json
+        url: http://localhost:8090/flowable-work/external-job-api/jobs
+        method: GET
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        transfer_encoding:
+            - chunked
+        content_length: -1
+        uncompressed: true
+        body: '{"data":[{"correlationId":"5827ce14-0769-11f1-8087-2edfee439de1","createTime":"2026-02-11T16:47:25.716Z","dueDate":null,"elementId":"bpmnTask_3","elementName":"External Worker task","exceptionMessage":null,"executionId":"PRC-582758da-0769-11f1-8087-2edfee439de1","id":"JOB-5827ce15-0769-11f1-8087-2edfee439de1","lockExpirationTime":null,"lockOwner":null,"processDefinitionId":"PRC-externalWorkerProcess:3:58102755-0769-11f1-8087-2edfee439de1","processInstanceId":"PRC-582731c7-0769-11f1-8087-2edfee439de1","retries":3,"scopeDefinitionId":null,"scopeId":null,"scopeType":null,"subScopeId":null,"tenantId":"","url":"http://localhost:8090/flowable-work/external-job-api/jobs/JOB-5827ce15-0769-11f1-8087-2edfee439de1"},{"correlationId":"c461df21-0820-11f1-8087-2edfee439de1","createTime":"2026-02-12T14:40:25.192Z","dueDate":null,"elementId":"bpmnTask_3","elementName":"External Worker task","exceptionMessage":null,"executionId":"PRC-c460a69b-0820-11f1-8087-2edfee439de1","id":"JOB-c461df22-0820-11f1-8087-2edfee439de1","lockExpirationTime":null,"lockOwner":null,"processDefinitionId":"PRC-c42439d6-0820-11f1-8087-2edfee439de1","processInstanceId":"PRC-c4605878-0820-11f1-8087-2edfee439de1","retries":3,"scopeDefinitionId":null,"scopeId":null,"scopeType":null,"subScopeId":null,"tenantId":"","url":"http://localhost:8090/flowable-work/external-job-api/jobs/JOB-c461df22-0820-11f1-8087-2edfee439de1"}],"order":"asc","size":2,"sort":"id","start":0,"total":2}'
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Content-Type:
+                - application/json
+            Date:
+                - Thu, 12 Feb 2026 14:40:25 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=2c813787-7584-420b-9aef-c7ff589246e1; Path=/flowable-work
+            Vary:
+                - accept-encoding
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '200 '
+        code: 200
+        duration: 90.164125ms
+    - id: 4
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        host: localhost:8090
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+        url: http://localhost:8090/flowable-work/process-api/runtime/process-instances/PRC-c4605878-0820-11f1-8087-2edfee439de1
+        method: DELETE
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        body: ""
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Date:
+                - Thu, 12 Feb 2026 14:40:25 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=a39d84ff-2416-43c4-a92b-b6e4ebc407e0; Path=/flowable-work
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '204 '
+        code: 204
+        duration: 114.164709ms
+    - id: 5
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        host: localhost:8090
+        form:
+            cascade:
+                - "true"
+        headers:
+            Accept:
+                - application/json
+            Authorization:
+                - Basic YWRtaW46dGVzdA==
+        url: http://localhost:8090/flowable-work/process-api/repository/deployments/PRC-c4230154-0820-11f1-8087-2edfee439de1?cascade=true
+        method: DELETE
+      response:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        body: ""
+        headers:
+            Cache-Control:
+                - no-cache, no-store, max-age=0, must-revalidate
+            Date:
+                - Thu, 12 Feb 2026 14:40:25 GMT
+            Expires:
+                - "0"
+            Pragma:
+                - no-cache
+            Set-Cookie:
+                - XSRF-TOKEN=047d69fd-7ef7-4fc1-83ad-08c6a036fe9d; Path=/flowable-work
+            X-Content-Type-Options:
+                - nosniff
+            X-Frame-Options:
+                - SAMEORIGIN
+            X-Xss-Protection:
+                - "0"
+        status: '204 '
+        code: 204
+        duration: 127.865ms

@@ -3,8 +3,8 @@ package worker_test
 import (
 	"testing"
 
-	"github.com/gdharley/flowable-external-client-golang/flowable"
-	"github.com/gdharley/flowable-external-client-golang/worker"
+	"github.com/flowable/flowable-external-client-golang/flowable"
+	"github.com/flowable/flowable-external-client-golang/worker"
 )
 
 func TestExternalWorkerSuccess(t *testing.T) {
